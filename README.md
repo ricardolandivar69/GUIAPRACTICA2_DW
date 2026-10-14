@@ -1,53 +1,57 @@
-# FormLab · Prácticas Experimentales 1 y 2
+# FormLab · Práctica Experimental 2
 
-FormLab reúne la evolución de dos prácticas de Desarrollo Web. La Práctica Experimental 1 se desarrolló con HTML5, CSS y JavaScript; en la Práctica Experimental 2 el mismo formulario se integra dentro de una Landing Page construida con React, JSX y Bootstrap, conservando y mejorando sus validaciones, eventos y diseño responsive.
+FormLab es una Landing Page desarrollada para la **Práctica Experimental 2 de Desarrollo Web**. El proyecto utiliza React, JSX, Bootstrap y Vite para construir una interfaz responsive organizada mediante componentes funcionales, con un formulario dinámico de registro e inicio de sesión, manejo de estado, eventos y validaciones del lado del cliente.
 
 ## Tecnologías
 
-- HTML5, CSS3 y JavaScript como base de la Práctica Experimental 1.
-- React para componentes funcionales y manejo de estado.
-- JSX para estructurar la interfaz dentro de los componentes.
-- Bootstrap para grid responsive, navegación, formularios, botones, cards, alertas y utilidades.
-- CSS personalizado para conservar la identidad visual de FormLab.
-- Vite como entorno de desarrollo y compilación.
-- GitHub Actions para compilar y publicar la aplicación en GitHub Pages.
+- **React** para componentes funcionales y manejo de estado.
+- **JSX** para estructurar la interfaz dentro de los componentes.
+- **Bootstrap** para grid responsive, navegación, formularios, botones, cards, alertas y utilidades.
+- **CSS personalizado** para conservar la identidad visual de FormLab y complementar Bootstrap.
+- **Vite** como entorno de desarrollo y compilación.
+- **GitHub Actions** para compilar y publicar la aplicación en GitHub Pages.
 
 ## Componentes principales
 
 - `SiteNavbar`: navegación responsive y selector de tema claro/oscuro.
-- `Hero`: explica la evolución de la Práctica 1 a la Práctica 2.
-- `Features`: tarjetas informativas creadas desde datos.
-- `AuthSection`: cambia dinámicamente entre registro y login.
+- `Hero`: presentación principal y llamados a la acción.
+- `Features`: tarjetas informativas sobre React, Bootstrap y validaciones.
+- `AuthSection`: alterna dinámicamente entre registro e inicio de sesión.
 - `RegisterForm`: formulario controlado con `useState` y validaciones.
 - `LoginForm`: inicio de sesión de demostración basado en la cuenta creada durante la sesión.
 - `StatusAlert`: mensajes dinámicos de éxito y error.
 - `Team`: integrantes del grupo.
-- `Footer`: cierre de la landing.
+- `Footer`: cierre de la Landing Page.
 
 ## Validaciones
 
-Registro:
+El formulario de registro valida:
+
 - nombre y apellido;
-- correo válido;
-- edad entre 18 y 99;
+- formato correcto de correo electrónico;
+- edad entre 18 y 99 años;
 - teléfono de 7 a 15 dígitos;
 - selección de perfil;
-- contraseña de mínimo 8 caracteres, con mayúscula, minúscula y número;
+- contraseña de mínimo 8 caracteres con mayúscula, minúscula y número;
 - confirmación de contraseña;
 - aceptación de términos.
 
-El login es una simulación únicamente de frontend. La cuenta se mantiene en el estado de React mientras la aplicación permanece abierta. No existe backend ni autenticación real.
+El inicio de sesión es una demostración del lado del cliente. La cuenta creada se mantiene en el estado de React mientras la aplicación permanece abierta; no existe backend ni autenticación real.
 
 ## Instalación local
 
-Requisito: Node.js y npm.
+Requisitos: Node.js y npm.
 
 ```bash
 npm install
 npm run dev
 ```
 
-Vite mostrará una dirección local, normalmente `http://localhost:5173/`.
+Vite mostrará una dirección local, normalmente:
+
+```text
+http://localhost:5173/
+```
 
 ## Compilación de producción
 
@@ -56,7 +60,7 @@ npm run build
 npm run preview
 ```
 
-`npm run build` genera la carpeta `dist/`.
+`npm run build` genera la carpeta `dist/` con la versión compilada del proyecto.
 
 ## Integración de Bootstrap
 
@@ -67,25 +71,31 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 ```
 
-La landing utiliza `container`, `row`, `col-*`, `navbar`, `card`, `btn`, `form-control`, `form-select`, `alert`, `nav-pills` y utilidades responsive, combinadas con estilos propios en `src/styles.css`.
+La interfaz utiliza clases y componentes de Bootstrap junto con estilos propios definidos en `src/styles.css`.
 
 ## GitHub Pages
 
-El repositorio grupal es `GUIAPRACTICA1_DW`. `vite.config.js` utiliza:
+Repositorio:
 
-```js
-base: '/GUIAPRACTICA1_DW/'
+```text
+https://github.com/ricardolandivar69/GUIAPRACTICA2_DW
 ```
 
-para que los assets de Vite funcionen correctamente al publicar el proyecto como GitHub Pages.
+Sitio publicado:
 
-El workflow `.github/workflows/deploy.yml` compila la aplicación y publica `dist/` automáticamente cuando se hace `push` a `main`.
+```text
+https://ricardolandivar69.github.io/GUIAPRACTICA2_DW/
+```
 
-En GitHub se debe configurar:
+`vite.config.js` debe utilizar:
+
+```js
+base: '/GUIAPRACTICA2_DW/'
+```
+
+La publicación se realiza mediante el workflow ubicado en `.github/workflows/`, por lo que en GitHub debe configurarse:
 
 **Settings → Pages → Source → GitHub Actions**
-
-No se debe usar `Deploy from a branch` para esta versión React/Vite.
 
 ## Integrantes
 
@@ -97,13 +107,9 @@ No se debe usar `Deploy from a branch` para esta versión React/Vite.
 
 ## Entrega
 
-La guía solicita un PDF que incluya:
+La entrega de la Práctica Experimental 2 incluye:
 
-1. enlace al video demostrativo en Google Drive (máximo 3 minutos);
-2. enlace directo al repositorio GitHub.
-
-Antes de entregar, comprobar ambos enlaces desde una ventana privada y verificar que la página publicada cargue sin errores.
-
-## Nota de publicación en GitHub Pages
-
-La configuración de producción usa `base: './'` en Vite y un workflow de GitHub Actions que compila el proyecto y publica la carpeta `dist`. Para Pages debe utilizarse **Source: GitHub Actions**; `Deploy from a branch` sobre `main / (root)` sirve el código fuente de Vite y no la aplicación compilada.
+1. informe en PDF;
+2. video demostrativo en Google Drive;
+3. repositorio de GitHub con el proyecto completo;
+4. enlace de GitHub Pages como evidencia adicional de la Landing Page publicada.
