@@ -21,9 +21,12 @@ export default function Features() {
     <section id="caracteristicas" className="section-space">
       <div className="container">
         <div className="section-heading text-center mx-auto mb-5">
-          <p className="eyebrow">REACT + CSS FRAMEWORK</p>
+          <p className="eyebrow">REACT + BOOTSTRAP</p>
           <h2 className="display-6 fw-bold">Una landing construida por componentes</h2>
-          <p className="section-copy">La estructura conserva la lógica del formulario de la práctica 1, pero ahora utiliza JSX, estado de React y clases de Bootstrap.</p>
+          <p className="section-copy">
+            La Práctica Experimental 2 utiliza JSX, estado de React, eventos y clases de Bootstrap
+            para construir una interfaz dinámica, reutilizable y adaptable a diferentes pantallas.
+          </p>
         </div>
         <div className="row g-4">
           {features.map((feature, index) => (
