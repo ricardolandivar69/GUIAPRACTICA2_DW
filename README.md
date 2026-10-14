@@ -38,16 +38,23 @@ El formulario de registro valida:
 
 El inicio de sesión es una demostración del lado del cliente. La cuenta creada se mantiene en el estado de React mientras la aplicación permanece abierta; no existe backend ni autenticación real.
 
-## Instalación local
+## Ejecución local
 
-Requisitos: Node.js y npm.
+1. Abrir la carpeta del proyecto en Visual Studio Code.
+2. Abrir una terminal dentro de la carpeta donde se encuentra `package.json`.
+3. Instalar las dependencias:
 
 ```bash
 npm install
+```
+
+4. Iniciar el servidor de desarrollo:
+
+```bash
 npm run dev
 ```
 
-Vite mostrará una dirección local, normalmente:
+5. Abrir en el navegador la dirección que muestre Vite, normalmente:
 
 ```text
 http://localhost:5173/
@@ -55,12 +62,14 @@ http://localhost:5173/
 
 ## Compilación de producción
 
+Para generar y comprobar la versión final del proyecto:
+
 ```bash
 npm run build
 npm run preview
 ```
 
-`npm run build` genera la carpeta `dist/` con la versión compilada del proyecto.
+`npm run build` genera la carpeta `dist/`, que contiene la aplicación compilada.
 
 ## Integración de Bootstrap
 
@@ -73,29 +82,20 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 
 La interfaz utiliza clases y componentes de Bootstrap junto con estilos propios definidos en `src/styles.css`.
 
-## GitHub Pages
+## Publicación en GitHub Pages
 
-Repositorio:
-
-```text
-https://github.com/ricardolandivar69/GUIAPRACTICA2_DW
-```
-
-Sitio publicado:
-
-```text
-https://ricardolandivar69.github.io/GUIAPRACTICA2_DW/
-```
-
-`vite.config.js` debe utilizar:
+1. Crear o utilizar un repositorio público en GitHub.
+2. Subir todos los archivos del proyecto, sin incluir `node_modules` ni `dist`.
+3. Verificar que `vite.config.js` tenga configurada la ruta base del repositorio:
 
 ```js
 base: '/GUIAPRACTICA2_DW/'
 ```
 
-La publicación se realiza mediante el workflow ubicado en `.github/workflows/`, por lo que en GitHub debe configurarse:
-
-**Settings → Pages → Source → GitHub Actions**
+4. Entrar a **Settings → Pages**.
+5. En **Build and deployment**, seleccionar **GitHub Actions**.
+6. El workflow ubicado en `.github/workflows/` instala las dependencias, ejecuta `npm run build` y publica la carpeta `dist/`.
+7. Esperar a que el proceso de **Actions** finalice correctamente y abrir el enlace público.
 
 ## Integrantes
 
@@ -105,11 +105,12 @@ La publicación se realiza mediante el workflow ubicado en `.github/workflows/`,
 - Carlos Llivisupa
 - Jackson Reyes
 
+## Enlaces de entrega
+
+- **Repositorio de GitHub:** [GUIAPRACTICA2_DW](https://github.com/ricardolandivar69/GUIAPRACTICA2_DW)
+- **GitHub Pages:** [Ver aplicación publicada](https://ricardolandivar69.github.io/GUIAPRACTICA2_DW/)
+- **Video demostrativo:** [Ver video en Google Drive](https://drive.google.com/drive/folders/1eSyUK2AHLn4H4Qs30AXZ1dEjfvRK14W3?hl=es)
+
 ## Entrega
 
-La entrega de la Práctica Experimental 2 incluye:
-
-1. informe en PDF;
-2. video demostrativo en Google Drive;
-3. repositorio de GitHub con el proyecto completo;
-4. enlace de GitHub Pages como evidencia adicional de la Landing Page publicada.
+La entrega de la Práctica Experimental 2 incluye el informe en PDF, el video demostrativo, el repositorio de GitHub y el enlace de GitHub Pages como evidencia adicional de la aplicación publicada.
